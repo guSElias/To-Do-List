@@ -45,8 +45,8 @@ export default {
       this.isCreating = false;
     },
     sendForm() {
-      
-      if (this.titleText > 0 && this.projectText.length > 0) {
+
+      if (this.titleText != "" && this.projectText != "") {
         const title = this.titleText;
         const project = this.projectText;
         this.$emit('create-tarefa', {

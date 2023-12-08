@@ -1,6 +1,6 @@
 <template>
   <todo-list v-bind:tarefas="tarefas"/>
-  <create-todo v-on:create-tarefa="createTarefa"/>
+  <create-todo @create-tarefa="emit('create-tarefa', createTarefa.target.value)"/>
 </template>
 
 <script>

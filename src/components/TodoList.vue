@@ -28,10 +28,14 @@ export default {
       this.tarefas[tarefaIndex].done = true;
     },
     deleteTarefa(tarefa) {
-      debugger
-      const tarefaIndex = this.tarefa.indexOf(tarefa);
-      this.tarefas.splice(tarefaIndex, 1);
-    },
+  const tarefaIndex = this.tarefas.indexOf(tarefa);
+
+  if (tarefaIndex !== -1) {
+    this.tarefas.splice(tarefaIndex, 1);
+  } else {
+    console.warn('Tarefa não encontrada:', tarefa);
+  }
+}
   },
     
   }
