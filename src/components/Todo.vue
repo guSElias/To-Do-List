@@ -20,16 +20,16 @@
     <div class="content" v-show="isEditing">
       <div class='ui form'>
         <div class='field'>
-          <label>Title</label>
-          <input type='text' v-model="tarefa.title" />
+          <label>Titulo</label>
+          <input type='text' v-model="tarefa.titulo" placeholder="Título"/>
         </div>
         <div class='field'>
           <label>Project</label>
-          <input type='text' v-model="tarefa.project" />
+          <input type='text' v-model="tarefa.projeto" placeholder="Projeto"/>
         </div>
         <div class='ui two button attached buttons'>
           <button class='ui basic blue button' v-on:click="hideForm">
-            Close X
+            Close 
           </button>
         </div>
       </div>
@@ -57,6 +57,8 @@ export default {
   },
   hideForm(){ 
     this.isEditing = false;
+    this.tarefa.title = this.tarefa.titulo;
+    this.tarefa.project = this.tarefa.projeto
     },
     deleteTarefa(tarefa){ 
       this.$emit('delete-tarefa', tarefa)

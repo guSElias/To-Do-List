@@ -24,7 +24,7 @@ export default {
       }, {
         title: 'Tarefa B',
         project: 'Projeto B',
-        done: true,
+        done: false,
       }, {
         title: 'Tarefa C',
         project: 'Projeto C',
