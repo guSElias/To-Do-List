@@ -1,6 +1,6 @@
 <template>
   <todo-list v-bind:tarefas="tarefas"/>
-  <create-todo @create-tarefa="emit('create-tarefa', createTarefa.target.value)"/>
+  <create-todo @create-tarefa="createTarefa"/>
 </template>
 
 <script>
@@ -11,7 +11,8 @@ export default {
 
   components: { 
      TodoList,
-     CreateTodo },
+     CreateTodo 
+    },
 
   name: 'App',
     data() {

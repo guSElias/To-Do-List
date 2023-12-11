@@ -8,11 +8,11 @@
         <div class='ui form'>
           <div class='field'>
             <label>Title</label>
-            <input v-model="titleText" type='text' ref='title' defaultValue="" />
+            <input v-model="titleText" type='text' ref='title' defaultValue="" placeholder="Titulo" />
           </div>
           <div class='field'>
             <label>Project</label>
-            <input v-model="projectText" type='text' ref='project' defaultValue="" />
+            <input v-model="projectText" type='text' ref='project' defaultValue="" placeholder="Descrição"/>
           </div>
           <div class='ui two button attached buttons'>
             <button class='ui basic blue button' v-on:click="sendForm()">
@@ -45,15 +45,10 @@ export default {
       this.isCreating = false;
     },
     sendForm() {
-
       if (this.titleText != "" && this.projectText != "") {
         const title = this.titleText;
         const project = this.projectText;
-        this.$emit('create-tarefa', {
-          title,
-          project,
-          done: false,
-        });
+        this.$emit('create-tarefa', title, project);
         this.titleText = '';
       }
       this.isCreating = false;
